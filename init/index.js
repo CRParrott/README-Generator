@@ -4,19 +4,16 @@ const fs = require ('fs');
 
 const generateBadges = require('./assets/generateBadges.js')
 // TODO: Create an array of questions for user input
-const questions = (inquirer);
-
-inquirer
-    .prompt([
+const questions = [
         {
             type: 'input',
             message: "What is the title of your README?",
-            name: 'Title',
+            name: 'title',
         },
         {
             type: 'input',
             message: "Write a quick description of the README",
-            name: 'Description',
+            name: 'description',
         },
         {
             type: 'input',
@@ -59,12 +56,12 @@ inquirer
             choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
             name: 'license'
         }
-]);
+];
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
+function writeToFile(fileName, questions) {
+    fs.writeFile(fileName, questions, (err) => {
         if (err) {
             return console.log(err);
         }
