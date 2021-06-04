@@ -7,7 +7,7 @@ A developer needs to generate readmes for almost every project they are working 
 This is an application that runs with Node.js that generates a README.md file based on input about your project. Check out the GeneratedREADME.md in this repo as an example.
 
 Table of Contents
-Installation
+Process
 Usage
 License
 Installation
